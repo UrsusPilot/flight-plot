@@ -2,7 +2,7 @@
 
 Getting data via xbee, and it as a plot.
 
-**Inspire from https://github.com/KuoE0/MPU6050-WebPlot**
+**Inspire by https://github.com/KuoE0/MPU6050-WebPlot**
 
 ## Prerequisite
 
