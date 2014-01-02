@@ -28,24 +28,8 @@ $(function() {
 			}
 
 			return data
-
-			// if (data.length > 0)
-			// 	data = data.slice(1);
-
-			// while (data.length < totalPoints) {
-			// 	var prev = data.length > 0 ? data[data.length - 1] : 50
-			// 	data.push(set);
-			// }
-
-			// var res = [];
-			// for (var i = 0; i < data.length; ++i) {
-			// 	res.push([i, data[i]])
-			// }
-			// return res;
 		}
-
-		console.log(data_roll)
-
+		
 		var plot = $.plot("#signal-plot", [{
 				label: 'Roll',
 				data: getData(roll, data_roll)
