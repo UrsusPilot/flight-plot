@@ -1,5 +1,54 @@
-var socket = io.connect('http://localhost:8000');
-socket.on('message', function (data) {
-    	console.log(data);
-    	// socket.emit('my other event', { my: 'data' });
+$(function() {	
+
+	var socket = io.connect('http://localhost:8000');
+	var data = []
+	socket.on('message', function (_data) {
+	    	var parse = JSON.parse(_data)
+		totalPoints = 300
+		var roll = parse.Roll
+		console.log(roll)
+
+
+		function getData(roll) {
+
+			if (data.length > 0)
+				data = data.slice(1);
+
+			// Do a random walk
+
+			while (data.length < totalPoints) {
+
+				var prev = data.length > 0 ? data[data.length - 1] : 50
+				data.push(roll);
+			}
+
+			// Zip the generated y values with the x values
+
+			var res = [];
+			for (var i = 0; i < data.length; ++i) {
+				res.push([i, data[i]])
+			}
+			console.log(res)
+			return res;
+		}
+
+		// Set up the control widget
+		var plot = $.plot("#signal-plot", [getData(roll)], {
+			series: {
+				shadowSize: 0	// Drawing is faster without shadows
+			},
+			yaxis: {
+				min: 0,
+				max: 100
+			},
+			xaxis: {
+				show: false
+			}
+		});
+
+		plot.setData([getData(roll)]);
+		plot.draw();
+	});
+
+	
 });
