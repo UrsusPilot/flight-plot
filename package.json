@@ -10,6 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "serialport": "~1.2.5",
-    "socket.io": "~0.9.16"
+    "socket.io": "~0.9.16",
+    "connect": "~2.12.0"
   }
 }
