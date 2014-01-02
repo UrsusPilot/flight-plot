@@ -17,6 +17,7 @@
   "dependencies": {
     "flot": "~0.8.2",
     "semantic": "~0.11.0",
-    "normalize-css": "~2.1.3"
+    "normalize-css": "~2.1.3",
+    "socket.io-client": "~0.9.16"
   }
 }
