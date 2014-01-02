@@ -14,15 +14,11 @@ $(function() {
 			if (data.length > 0)
 				data = data.slice(1);
 
-			// Do a random walk
-
 			while (data.length < totalPoints) {
 
 				var prev = data.length > 0 ? data[data.length - 1] : 50
 				data.push(roll);
 			}
-
-			// Zip the generated y values with the x values
 
 			var res = [];
 			for (var i = 0; i < data.length; ++i) {
@@ -32,7 +28,6 @@ $(function() {
 			return res;
 		}
 
-		// Set up the control widget
 		var plot = $.plot("#signal-plot", [getData(roll)], {
 			series: {
 				shadowSize: 0	// Drawing is faster without shadows
