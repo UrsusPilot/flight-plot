@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "chilijung <chilijung@gmail.com>",
+  "license": "MIT",
   "dependencies": {
     "serialport": "~1.2.5",
     "socket.io": "~0.9.16"
