@@ -1,10 +1,7 @@
 var app = require('http').createServer(handler)
 var io = require('socket.io').listen(app)
 var fs = require('fs')
-var SerialPort = require("serialport").SerialPort
-var serialPort = new SerialPort("/dev/ttyUSB0", {
-	baudrate: 9600
-})
+
 
 app.listen(80);
 
@@ -21,6 +18,11 @@ function handler (req, res) {
 	}
 
 io.sockets.on('connection', function (socket) {
+	console.log("connect to socket.io")
+	var SerialPort = require("serialport").SerialPort
+	var serialPort = new SerialPort("/dev/ttyUSB0", {
+		baudrate: 9600
+	})
 	serialPort.on("open", function() {
 		console.log("open");
 		var count = 0
