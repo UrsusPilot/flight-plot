@@ -1,21 +1,13 @@
-var app = require('http').createServer(handler)
-var io = require('socket.io').listen(app)
+var connect = require('connect')
+var io = require('socket.io').listen(8000)
 var fs = require('fs')
 
 
-app.listen(80);
+var app = connect().use(connect.static(__dirname))
 
-function handler (req, res) {
-	fs.readFile(__dirname + '/index.html',
-		function(err, data) {
-			if(err) {
-				res.writeHead(500);
-				return res.end('Error loading index.html');
-			}
-			res.writeHead(200);
-			res.end(data);
-		})
-	}
+connect.createServer(app).listen(8080);
+
+console.log('port is listening to 8080 port')
 
 io.sockets.on('connection', function (socket) {
 	console.log("connect to socket.io")
@@ -35,7 +27,6 @@ io.sockets.on('connection', function (socket) {
 				var re_chop = chop.replace(/'/g, '"');
 				count ++;
 				if(count > 2) {
-					console.log(re_chop)
 					socket.emit('message', re_chop);	
 				}
 				text = ''
