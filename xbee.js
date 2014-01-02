@@ -21,18 +21,21 @@ function handler (req, res) {
 	}
 
 io.sockets.on('connection', function (socket) {
-
 	serialPort.on("open", function() {
 		console.log("open");
+		var count = 0
 		var text = '';
 		serialPort.on("data", function(data) {
 			text = text + data
 			var index = text.lastIndexOf("/r/n");
 			if(index != -1) {
 				var chop = text.substring(0, text.lastIndexOf("/r/n"))
-				var parse = JSON.parse(chop)
-				console.log(parse)
-				socket.emit('data', parse);
+				var re_chop = chop.replace(/'/g, '"');
+				count ++;
+				if(count > 2) {
+					console.log(re_chop)
+					socket.emit('message', re_chop);	
+				}
 				text = ''
 			}
 		});
@@ -40,5 +43,3 @@ io.sockets.on('connection', function (socket) {
 
 
 });
-
-	
