@@ -1,6 +1,6 @@
-# Flight Xbee
+# Flight Xbee plot
 
-Getting data via xbee
+Getting data via xbee, and it as a plot.
 
 ## Start 
 
