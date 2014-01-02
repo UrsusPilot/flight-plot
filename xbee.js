@@ -21,9 +21,9 @@ io.sockets.on('connection', function (socket) {
 		var text = '';
 		serialPort.on("data", function(data) {
 			text = text + data
-			var index = text.lastIndexOf("/r/n");
+			var index = text.lastIndexOf("\r\n");
 			if(index != -1) {
-				var chop = text.substring(0, text.lastIndexOf("/r/n"))
+				var chop = text.substring(0, text.lastIndexOf("\r\n"))
 				var re_chop = chop.replace(/'/g, '"');
 				count ++;
 				if(count > 2) {
