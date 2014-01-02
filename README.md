@@ -1,6 +1,6 @@
 # Flight Xbee plot
 
-Getting data via xbee, and it as a plot.
+Getting data via xbee, and it as a plot. Message sending via socket.io.
 
 **Inspire by https://github.com/KuoE0/MPU6050-WebPlot**
 
