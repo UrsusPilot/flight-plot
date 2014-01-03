@@ -47,13 +47,13 @@ $(function() {
 		}
 
 		var att_plot = $.plot("#attitude-plot", [{
-				label: 'Roll',
+				label: 'Roll (degree)',
 				data: getData(roll, data_roll)
 			},{
-				label: 'Pitch',
+				label: 'Pitch (degree)',
 				data: getData(pitch, data_pitch)
 			},{
-				label: 'Yaw',
+				label: 'Yaw (degree)',
 				data: getData(yaw, data_yaw)
 			}], {
 			series: {
@@ -71,13 +71,13 @@ $(function() {
 
 
 		var acc_plot = $.plot("#acc-plot", [{
-				label: 'x',
+				label: 'x (g)',
 				data: getData(acc_x, data_acc_x)
 			},{
-				label: 'y',
+				label: 'y (g)',
 				data: getData(acc_y, data_acc_y)
 			},{
-				label: 'z',
+				label: 'z (g)',
 				data: getData(acc_z, data_acc_z)
 			}], {
 			series: {
@@ -95,13 +95,13 @@ $(function() {
 		acc_plot.draw();
 
 		var gyro_plot = $.plot("#gyro-plot", [{
-				label: 'x',
+				label: 'x (degree/s)',
 				data: getData(gyro_x, data_gyro_x)
 			},{
-				label: 'y',
+				label: 'y (degree/s)',
 				data: getData(gyro_y, data_gyro_y)
 			},{
-				label: 'z',
+				label: 'z (degree/s)',
 				data: getData(gyro_z, data_gyro_z)
 			}], {
 			series: {
