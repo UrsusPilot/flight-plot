@@ -1,7 +1,8 @@
 var connect = require('connect')
 var io = require('socket.io').listen(8000)
 var fs = require('fs')
-
+var serialport_arg = process.argv[2]
+var buad_arg = process.argv[3]
 
 var app = connect().use(connect.static(__dirname))
 
@@ -12,8 +13,8 @@ console.log('port is listening to 8080 port')
 io.sockets.on('connection', function (socket) {
 	console.log("connect to socket.io")
 	var SerialPort = require("serialport").SerialPort
-	var serialPort = new SerialPort("/dev/ttyUSB0", {
-		baudrate: 9600
+	var serialPort = new SerialPort(serialport_arg, {
+		baudrate: buad_arg
 	})
 	serialPort.on("open", function() {
 		console.log("open");
