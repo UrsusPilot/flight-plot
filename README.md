@@ -12,9 +12,9 @@ Getting data via xbee, and it as a plot. Message sending via socket.io.
 
 ## Preview
 
-![acc](https://raw.github.com/chilijung/flight-plot/master/preview/acceleration.jpg)
-![angular](https://raw.github.com/chilijung/flight-plot/master/preview/angular_rate.jpg)
-![attitude](https://raw.github.com/chilijung/flight-plot/master/preview/attitude.jpg)
+![acc](https://raw.github.com/QuadCopterTainan/flight-plot/master/preview/acceleration.jpg)
+![angular](https://raw.github.com/QuadCopterTainan/flight-plot/master/preview/angular_rate.jpg)
+![attitude](https://raw.github.com/QuadCopterTainan/flight-plot/master/preview/attitude.jpg)
 
 ## Start 
 
