@@ -48,5 +48,5 @@ bower install
 
 ## License
 
-MIT
+MIT [@chilijung](http://github.com/chilijung)
 
